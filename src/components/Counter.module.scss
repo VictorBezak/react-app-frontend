@@ -1,0 +1,39 @@
+.counter {
+    --label-font-size: 2em;
+    --button-font-size: 1.25em;
+    --border-color: steelblue;
+    border: solid 1px;
+    border-color: var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.5em;
+    display: grid;
+    place-content: center;
+}
+.label {
+    font-size: var(--label-font-size);
+    font-weight: bold;
+    text-align: center;
+    padding: 1em 0
+}
+.buttons {
+    justify-self: center;
+    display: grid;
+    grid-template-areas: "decrement increment" "reset reset";
+    gap: 4px;
+    width: 200px;
+    height: 100px;
+    > button {
+        font-size: var(--button-font-size);
+    }
+}
+.reset {
+    grid-area: reset;
+}
+.flash {
+    animation: flashAnimation 200ms;
+}  
+@keyframes flashAnimation {
+    0% {
+      border-color: lightsteelblue;
+    }
+}
